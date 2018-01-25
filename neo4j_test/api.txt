@@ -1,0 +1,13 @@
+api说明：
+1、文件内容存入neo4j后，
+   将nodes数量与relationship数量存入数据库：
+   url：http://10.2.45.198:9999/api/v1/sources method:[post] param:不需要
+
+********2017-12-05***********
+已实现：
+1、上传文件后文件详情信息的查询
+2、启动分析，分析所上传文件的nodes和relationship
+3、生成json文件，供前端调用
+待完成：
+1、文件上传与信息捕捉入库（含mysql与neo4j）
+ 其中，neo4j：上传文件需存储到服务器固定目录。

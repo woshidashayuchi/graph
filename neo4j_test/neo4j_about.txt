@@ -1,0 +1,20 @@
+root kroller1880
+中心：
+1 节点中心度
+  节点中心度给出网络中节点的重要性的相对度量。有许多不同的方式来度量中心度，每种方式都代表不同类型的“重要性”
+2 度中心性(Degree Centrality)
+  某个角色的度中心性是指该角色接触的其他角色数：
+  MATCH (c:Character)-[:INTERACTS]- RETURN c.name AS character, count(*) AS degree ORDER BY degree DESC
+3 加权度中心性（Weighted Degree Centrality）
+  作者存储一对角色接触的次数作为INTERACTS关系的weight属性。对该角色的INTERACTS关系的所有weight相加得到加权度中心性
+  MATCH (c:Character)-[r:INTERACTS]- RETURN c.name AS character, sum(r.weight) AS weightedDegree ORDER BY weightedDegree DESC
+
+4 介数中心性（Betweenness Centrality）
+    介数中心性：在网络中，一个节点的介数中心性是指其它两个节点的所有最短路径都经过这个节点，则这些所有最短路径数即为此节点的介数中心性。介数中心性是一种重要的度量，因为它可以鉴别出网络中的“信息中间人”或者网络聚类后的联结点。
+
+    作者：wangliang938
+    链接：http://www.jianshu.com/p/c82fc62fd9a5
+    來源：简书
+    著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+
